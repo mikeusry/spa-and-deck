@@ -12,7 +12,17 @@ interface HubSpotFormProps {
 
 declare global {
   interface Window {
-    hbspt: any;
+    hbspt: {
+      forms: {
+        create: (options: {
+          region: string;
+          portalId: string;
+          formId: string;
+          target: string;
+          onFormSubmit?: () => void;
+        }) => void;
+      };
+    };
   }
 }
 
@@ -24,8 +34,8 @@ export default function HubSpotForm({
   onFormSubmit 
 }: HubSpotFormProps) {
   useEffect(() => {
-    let retryInterval: NodeJS.Timeout;
-    let timeoutId: NodeJS.Timeout;
+    let retryIntervalId: NodeJS.Timeout | null = null;
+    let timeoutIntervalId: NodeJS.Timeout | null = null;
 
     function createForm() {
       const target = `#hubspot-form-${formId}`;
@@ -70,22 +80,22 @@ export default function HubSpotForm({
     }
 
     // Retry form creation if HubSpot takes time to load
-    retryInterval = setInterval(() => {
+    retryIntervalId = setInterval(() => {
       const targetElement = document.querySelector(`#hubspot-form-${formId}`);
       if (window.hbspt?.forms && targetElement && !targetElement.querySelector('form')) {
         createForm();
-        clearInterval(retryInterval);
+        if (retryIntervalId) clearInterval(retryIntervalId);
       }
     }, 500);
 
     // Clean up interval after 10 seconds
-    timeoutId = setTimeout(() => {
-      clearInterval(retryInterval);
+    timeoutIntervalId = setTimeout(() => {
+      if (retryIntervalId) clearInterval(retryIntervalId);
     }, 10000);
 
     return () => {
-      if (retryInterval) clearInterval(retryInterval);
-      if (timeoutId) clearTimeout(timeoutId);
+      if (retryIntervalId) clearInterval(retryIntervalId);
+      if (timeoutIntervalId) clearTimeout(timeoutIntervalId);
     };
   }, [portalId, formId, region, onFormSubmit]);
 

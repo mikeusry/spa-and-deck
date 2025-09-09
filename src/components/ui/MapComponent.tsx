@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
+import type L from 'leaflet';
 
 interface MapComponentProps {
   latitude: number;
@@ -20,7 +21,7 @@ export default function MapComponent({
   className = "h-96 lg:h-full"
 }: MapComponentProps) {
   const mapRef = useRef<HTMLDivElement>(null);
-  const mapInstanceRef = useRef<any>(null);
+  const mapInstanceRef = useRef<L.Map | null>(null);
 
   useEffect(() => {
     let isMounted = true;
@@ -29,7 +30,6 @@ export default function MapComponent({
       try {
         // Dynamic import to avoid SSR issues
         const L = (await import('leaflet')).default;
-        await import('leaflet/dist/leaflet.css');
 
         // Fix for default markers in Next.js
         const iconRetinaUrl = 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon-2x.png';

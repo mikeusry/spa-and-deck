@@ -87,7 +87,7 @@ export default function BlairsvillePage() {
               <div className="space-y-4 text-lg text-gray-700">
                 <p>
                   Located in the scenic town of Blairsville, our showroom serves hot tub enthusiasts throughout 
-                  Union County, Towns County, and the surrounding North Georgia mountains. We're perfectly positioned 
+                  Union County, Towns County, and the surrounding North Georgia mountains. We&apos;re perfectly positioned 
                   near Brasstown Bald, Vogel State Park, and Lake Nottely to serve mountain residents and cabin owners.
                 </p>
                 <p>
@@ -395,7 +395,7 @@ export default function BlairsvillePage() {
               
               <Card>
                 <div className="p-6">
-                  <h3 className="font-bold text-gray-900 mb-3">What's your service radius from Blairsville?</h3>
+                  <h3 className="font-bold text-gray-900 mb-3">What&apos;s your service radius from Blairsville?</h3>
                   <p className="text-gray-600">
                     We serve a 50-mile radius from our Blairsville location, including Union County, Towns County, and parts of North Carolina. Call us to confirm service in your specific area.
                   </p>

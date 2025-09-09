@@ -43,7 +43,7 @@ export default function BlueRidgePage() {
               {COMPANY.name} - Blue Ridge Showroom
             </h1>
             <p className="text-xl text-gray-200 mb-4 leading-relaxed">
-              North Georgia's premier spa destination in the heart of the Blue Ridge Mountains
+              North Georgia&apos;s premier spa destination in the heart of the Blue Ridge Mountains
             </p>
             
             {/* Key Business Info */}
@@ -87,7 +87,7 @@ export default function BlueRidgePage() {
               <div className="space-y-4 text-lg text-gray-700">
                 <p>
                   Nestled in the beautiful Blue Ridge Mountains along the scenic Appalachian Highway, our flagship 
-                  showroom has been serving Fannin County and surrounding areas for over four decades. We're 
+                  showroom has been serving Fannin County and surrounding areas for over four decades. We&apos;re 
                   conveniently located near Blue Ridge Lake, the Toccoa River, and the famous Blue Ridge Scenic Railway.
                 </p>
                 <p>
@@ -165,7 +165,7 @@ export default function BlueRidgePage() {
                   </div>
                   <div>
                     <h4 className="font-semibold text-gray-900">Tourism Industry Partners</h4>
-                    <p className="text-gray-600">Serving Blue Ridge's vacation rental and hospitality sector</p>
+                    <p className="text-gray-600">Serving Blue Ridge&apos;s vacation rental and hospitality sector</p>
                   </div>
                 </div>
               </div>
@@ -337,7 +337,7 @@ export default function BlueRidgePage() {
                 Schedule Your Blue Ridge Visit
               </h2>
               <p className="text-xl text-gray-600">
-                Experience North Georgia's largest spa showroom. Schedule a personalized consultation with our Blue Ridge experts.
+                Experience North Georgia&apos;s largest spa showroom. Schedule a personalized consultation with our Blue Ridge experts.
               </p>
             </div>
 

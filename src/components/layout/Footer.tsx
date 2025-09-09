@@ -11,11 +11,9 @@ import {
 import { COMPANY, LOCATIONS, NAVIGATION, SOCIAL_LINKS } from '@/lib/constants';
 import type { FooterProps } from '@/types/components';
 import Container from '@/components/ui/Container';
-import Button from '@/components/ui/Button';
 
 export default function Footer({ 
   className, 
-  showNewsletter = true, 
   showSocialLinks = true, 
   compact = false 
 }: FooterProps) {
