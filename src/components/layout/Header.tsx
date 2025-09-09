@@ -40,6 +40,9 @@ export default function Header({
                 src="https://res.cloudinary.com/southland-organics/image/upload/h_48,q_auto,f_auto/Georgia%20Spa%20Company/GeorgiaSpaCompany-NewLogo_vsotmk"
                 alt="Georgia Spa Company Logo"
                 className="h-12 w-auto transition-transform duration-200 group-hover:scale-105"
+                width="48"
+                height="48"
+                loading="eager"
               />
             </div>
             <div className="hidden sm:block">

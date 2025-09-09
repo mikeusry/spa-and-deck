@@ -6,8 +6,9 @@ import Button from '@/components/ui/Button';
 import TestimonialsSection from '@/components/sections/TestimonialsSection';
 
 export const metadata: Metadata = {
-  title: 'About Us',
-  description: `Learn about ${COMPANY.name} (formerly ${COMPANY.formerName}) - serving North Georgia for ${COMPANY.established} with the same trusted team.`,
+  title: `About ${COMPANY.name} | 40+ Years Hot Tub Dealer North Georgia`,
+  description: `Discover ${COMPANY.name}'s story - formerly ${COMPANY.formerName}. Over ${COMPANY.established} serving North Georgia with premium Hot Spring Spas, Caldera Spas, and exceptional service in Blue Ridge & Blairsville.`,
+  keywords: 'about Georgia Spa Company, Spa and Deck Creations history, North Georgia hot tub dealer, Blue Ridge spa dealer, Blairsville hot tub company, 40 years experience',
 };
 
 export default function AboutPage() {
@@ -28,7 +29,7 @@ export default function AboutPage() {
         <Container className="relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl lg:text-5xl font-bold text-white mb-6">
-              About {COMPANY.name}
+              About {COMPANY.name} - 40+ Years Hot Tub Dealer
             </h1>
             <p className="text-xl text-gray-200 leading-relaxed">
               {COMPANY.description}
@@ -201,6 +202,59 @@ export default function AboutPage() {
           </div>
         </Container>
       </Section>
+
+      {/* Schema Markup */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "AboutPage",
+            "name": "About Georgia Spa Company",
+            "description": "Learn about Georgia Spa Company, formerly Spa and Deck Creations, serving North Georgia for over 40 years with premium hot tubs and spas.",
+            "mainEntity": {
+              "@type": "LocalBusiness",
+              "name": "Georgia Spa Company", 
+              "alternateName": "Spa and Deck Creations",
+              "foundingDate": "1980",
+              "description": "North Georgia's premier spa dealership with over 40 years of experience serving Blue Ridge and Blairsville with Hot Spring Spas, Caldera Spas, and complete spa services.",
+              "image": "https://res.cloudinary.com/southland-organics/image/upload/Georgia%20Spa%20Company/GeorgiaSpaCompany-NewLogo_vsotmk",
+              "logo": "https://res.cloudinary.com/southland-organics/image/upload/Georgia%20Spa%20Company/GeorgiaSpaCompany-NewLogo_vsotmk",
+              "telephone": "(678) 383-2583",
+              "address": [
+                {
+                  "@type": "PostalAddress",
+                  "streetAddress": "5772 Appalachian Hwy",
+                  "addressLocality": "Blue Ridge", 
+                  "addressRegion": "GA",
+                  "postalCode": "30513"
+                },
+                {
+                  "@type": "PostalAddress",
+                  "streetAddress": "19 Hollow Hill Rd",
+                  "addressLocality": "Blairsville",
+                  "addressRegion": "GA", 
+                  "postalCode": "30512"
+                }
+              ],
+              "areaServed": [
+                "Blue Ridge, GA",
+                "Blairsville, GA",
+                "North Georgia Mountains",
+                "Fannin County, GA",
+                "Union County, GA"
+              ],
+              "speciality": [
+                "Hot Spring Spas",
+                "Caldera Spas", 
+                "Endless Pools",
+                "Spa Installation",
+                "Hot Tub Service"
+              ]
+            }
+          })
+        }}
+      />
     </>
   );
 }

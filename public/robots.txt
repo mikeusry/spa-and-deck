@@ -1,0 +1,20 @@
+User-agent: *
+Allow: /
+
+# Allow crawling of images
+Allow: /images/
+
+# Sitemaps
+Sitemap: https://georgiaspacompany.com/sitemap.xml
+
+# Specifically allow important pages
+Allow: /
+Allow: /about
+Allow: /services
+Allow: /contact
+Allow: /locations/blue-ridge
+Allow: /locations/blairsville
+
+# Block any API routes or admin paths (if any exist in the future)
+Disallow: /api/
+Disallow: /admin/

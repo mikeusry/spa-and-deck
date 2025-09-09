@@ -6,8 +6,9 @@ import Card from '@/components/ui/Card';
 import Button from '@/components/ui/Button';
 
 export const metadata: Metadata = {
-  title: 'Services',
-  description: `Complete spa services from ${COMPANY.name} - sales, installation, maintenance, repair, and water care for North Georgia.`,
+  title: `Hot Tub Services North Georgia | ${COMPANY.name} - Sales, Service & Repair`,
+  description: `Complete spa services from ${COMPANY.name} - Hot Spring & Caldera spa sales, professional installation, maintenance, repair, and water care for Blue Ridge & Blairsville.`,
+  keywords: 'hot tub service North Georgia, spa repair Blue Ridge, hot tub installation Blairsville, spa maintenance, Hot Spring service, Caldera repair, spa chemicals',
 };
 
 export default function ServicesPage() {
@@ -28,7 +29,7 @@ export default function ServicesPage() {
         <Container className="relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl lg:text-5xl font-bold text-white mb-6">
-              Complete Spa Services
+              Hot Tub & Spa Services North Georgia
             </h1>
             <p className="text-xl text-gray-200 leading-relaxed">
               From premium spa sales to expert maintenance, we provide comprehensive spa solutions 
@@ -191,6 +192,72 @@ export default function ServicesPage() {
           </div>
         </Container>
       </Section>
+
+      {/* Schema Markup */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "name": "Hot Tub and Spa Services North Georgia",
+            "provider": {
+              "@type": "LocalBusiness",
+              "name": "Georgia Spa Company",
+              "image": "https://res.cloudinary.com/southland-organics/image/upload/Georgia%20Spa%20Company/GeorgiaSpaCompany-NewLogo_vsotmk",
+              "telephone": "(678) 383-2583",
+              "address": [
+                {
+                  "@type": "PostalAddress",
+                  "streetAddress": "5772 Appalachian Hwy",
+                  "addressLocality": "Blue Ridge",
+                  "addressRegion": "GA",
+                  "postalCode": "30513"
+                },
+                {
+                  "@type": "PostalAddress", 
+                  "streetAddress": "19 Hollow Hill Rd",
+                  "addressLocality": "Blairsville",
+                  "addressRegion": "GA",
+                  "postalCode": "30512"
+                }
+              ]
+            },
+            "description": "Complete hot tub and spa services including sales, installation, maintenance, repair, and water care for North Georgia.",
+            "serviceType": [
+              "Hot Tub Sales",
+              "Spa Installation", 
+              "Hot Tub Repair",
+              "Spa Maintenance",
+              "Water Care Services",
+              "Spa Chemicals",
+              "Hot Tub Covers"
+            ],
+            "areaServed": [
+              "Blue Ridge, GA",
+              "Blairsville, GA", 
+              "Hiawassee, GA",
+              "Young Harris, GA",
+              "Dahlonega, GA",
+              "Helen, GA"
+            ],
+            "brand": [
+              {
+                "@type": "Brand",
+                "name": "Hot Spring Spas"
+              },
+              {
+                "@type": "Brand", 
+                "name": "Caldera Spas"
+              },
+              {
+                "@type": "Brand",
+                "name": "Endless Pools"
+              }
+            ]
+          })
+        }}
+      />
     </>
   );
 }

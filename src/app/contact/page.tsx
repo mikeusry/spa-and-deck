@@ -14,8 +14,9 @@ import {
 } from '@heroicons/react/24/outline';
 
 export const metadata: Metadata = {
-  title: 'Contact Us',
-  description: `Contact ${COMPANY.name} in Blue Ridge or Blairsville for spa sales, service, and consultation. Call, email, or visit our North Georgia showrooms.`,
+  title: `Contact ${COMPANY.name} | Hot Tub Dealer Blue Ridge & Blairsville GA`,
+  description: `Contact ${COMPANY.name} in Blue Ridge or Blairsville for hot tub sales, spa service, and consultation. Visit our North Georgia showrooms or call (706) 632-1833 for Blue Ridge, (706) 745-0630 for Blairsville.`,
+  keywords: 'contact Georgia Spa Company, hot tub dealer contact, Blue Ridge spa showroom, Blairsville hot tub store, North Georgia spa consultation',
 };
 
 export default function ContactPage() {
@@ -257,6 +258,51 @@ export default function ContactPage() {
           </div>
         </Container>
       </Section>
+
+      {/* Schema Markup */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Do I need an appointment?",
+                "acceptedAnswer": {
+                  "@type": "Answer", 
+                  "text": "While walk-ins are welcome, we recommend scheduling to ensure our experts can provide full attention."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Do you offer financing?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes, we offer various financing options to make your dream spa affordable."
+                }
+              },
+              {
+                "@type": "Question", 
+                "name": "What's your service area?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "We serve within 50 miles of both Blue Ridge and Blairsville, covering all of North Georgia."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What brands do you service?", 
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "We service all major spa brands including Hot Spring, Caldera, and many others. Our certified technicians are trained on multiple systems."
+                }
+              }
+            ]
+          })
+        }}
+      />
     </>
   );
 }

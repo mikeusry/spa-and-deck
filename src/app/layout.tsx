@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import "../styles/hubspot-forms.css";
 import { COMPANY, SEO } from '@/lib/constants';
@@ -65,6 +66,9 @@ export const metadata: Metadata = {
   alternates: {
     canonical: SEO.siteUrl,
   },
+  other: {
+    'google-site-verification': process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || '',
+  },
 };
 
 export default function RootLayout({
@@ -77,6 +81,17 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col`}
       >
+        {/* Google Analytics */}
+        <Script src="https://www.googletagmanager.com/gtag/js?id=G-W7BV1LX1N2" />
+        <Script id="google-analytics">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-W7BV1LX1N2');
+          `}
+        </Script>
+        
         <Header />
         <main className="flex-1">
           {children}

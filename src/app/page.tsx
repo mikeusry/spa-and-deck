@@ -6,8 +6,9 @@ import Button from '@/components/ui/Button';
 import TestimonialsSection from '@/components/sections/TestimonialsSection';
 
 export const metadata: Metadata = {
-  title: `Home | ${COMPANY.tagline}`,
-  description: `Welcome to ${COMPANY.name} - ${COMPANY.description}`,
+  title: `Hot Tubs & Spas North Georgia | ${COMPANY.name} - Blue Ridge & Blairsville`,
+  description: `${COMPANY.name} - North Georgia's premier hot tub dealership serving Blue Ridge & Blairsville for ${COMPANY.established}. Hot Spring Spas, Caldera Spas, Endless Pools, expert service & installation.`,
+  keywords: 'hot tubs North Georgia, spas Blue Ridge, hot tub dealer Blairsville, Hot Spring Spas, Caldera Spas, Endless Pools, spa service North Georgia, hot tub installation',
 };
 
 export default function HomePage() {
@@ -27,12 +28,17 @@ export default function HomePage() {
       {/* Hero Section */}
       <Section padding="xl" className="relative overflow-hidden">
         {/* Background Image */}
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{
-            backgroundImage: `url('https://res.cloudinary.com/southland-organics/image/upload/c_fill,w_1920,h_800,q_auto,f_auto/Georgia%20Spa%20Company/hot-tub-lifestyle/HSS-2024-Highlife-Grandee')`
-          }}
-        />
+        <div className="absolute inset-0">
+          <img
+            src="https://res.cloudinary.com/southland-organics/image/upload/c_fill,w_1920,h_800,q_auto,f_auto/Georgia%20Spa%20Company/hot-tub-lifestyle/HSS-2024-Highlife-Grandee"
+            alt="Premium Hot Tub Lifestyle"
+            className="w-full h-full object-cover"
+            fetchPriority="high"
+            loading="eager"
+            width="1920"
+            height="800"
+          />
+        </div>
         {/* Dark Overlay */}
         <div className="absolute inset-0 bg-black/60" />
         
@@ -166,8 +172,8 @@ export default function HomePage() {
                 <video
                   className="w-full h-auto"
                   controls
-                  preload="metadata"
-                  poster="https://res.cloudinary.com/southland-organics/video/upload/q_auto,f_auto/Georgia%20Spa%20Company/hhspgbm1c1mo6lnweztt.jpg"
+                  preload="none"
+                  poster="https://res.cloudinary.com/southland-organics/video/upload/q_auto,f_auto,w_800,h_450/Georgia%20Spa%20Company/hhspgbm1c1mo6lnweztt.jpg"
                 >
                   <source 
                     src="https://res.cloudinary.com/southland-organics/video/upload/q_auto,f_auto/Georgia%20Spa%20Company/hhspgbm1c1mo6lnweztt.mp4" 
