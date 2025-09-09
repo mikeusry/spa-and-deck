@@ -10,11 +10,15 @@ import Footer from '@/components/layout/Footer';
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
+  display: 'swap', // Improve font loading performance
+  preload: true,
 });
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+  display: 'swap',
+  preload: false, // Only load when needed
 });
 
 export const metadata: Metadata = {
@@ -78,12 +82,35 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
+      <head>
+        {/* Performance Optimizations - Preload Critical Resources */}
+        <link 
+          rel="preload" 
+          href="https://res.cloudinary.com/southland-organics/image/upload/c_fill,w_1920,h_800,q_auto,f_webp,dpr_auto/Georgia%20Spa%20Company/hot-tub-lifestyle/HSS-2024-Highlife-Grandee" 
+          as="image" 
+          type="image/webp"
+        />
+        <link 
+          rel="preload" 
+          href="https://res.cloudinary.com/southland-organics/image/upload/h_48,q_auto,f_auto/Georgia%20Spa%20Company/GeorgiaSpaCompany-NewLogo_vsotmk" 
+          as="image"
+        />
+        
+        {/* DNS Prefetch for External Domains */}
+        <link rel="dns-prefetch" href="//res.cloudinary.com" />
+        <link rel="dns-prefetch" href="//www.googletagmanager.com" />
+        <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+        <link rel="dns-prefetch" href="//fonts.gstatic.com" />
+        
+        {/* Preconnect to High-Priority Origins */}
+        <link rel="preconnect" href="https://res.cloudinary.com" crossOrigin="" />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col`}
       >
         {/* Google Analytics */}
-        <Script src="https://www.googletagmanager.com/gtag/js?id=G-W7BV1LX1N2" />
-        <Script id="google-analytics">
+        <Script src="https://www.googletagmanager.com/gtag/js?id=G-W7BV1LX1N2" strategy="afterInteractive" />
+        <Script id="google-analytics" strategy="afterInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}

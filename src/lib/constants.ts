@@ -45,8 +45,8 @@ export const LOCATIONS = {
       sunday: 'Sunday: Closed'
     },
     coordinates: {
-      lat: 34.8782, // More accurate Blairsville area coordinates
-      lng: -83.9582
+      lat: 34.929197, // Exact coordinates for 19 Hollow Hill Rd, Blairsville, GA 30512
+      lng: -84.022719
     }
   }
 } as const;

@@ -32,14 +32,17 @@ export default function HomePage() {
         {/* Background Image */}
         <div className="absolute inset-0">
           <Image
-            src="https://res.cloudinary.com/southland-organics/image/upload/c_fill,w_1920,h_800,q_auto,f_auto/Georgia%20Spa%20Company/hot-tub-lifestyle/HSS-2024-Highlife-Grandee"
+            src="https://res.cloudinary.com/southland-organics/image/upload/c_fill,w_1920,h_800,q_auto,f_webp,dpr_auto/Georgia%20Spa%20Company/hot-tub-lifestyle/HSS-2024-Highlife-Grandee"
             alt="Premium Hot Tub Lifestyle - Georgia Spa Company Blue Ridge Showroom"
             className="w-full h-full object-cover"
             priority={true}
             width={1920}
             height={800}
-            sizes="100vw"
-            quality={85}
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 1920px"
+            quality={75}
+            placeholder="blur"
+            blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkbHB0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyLli5GFBKkHHHOa4cRsddHEW+xfSkm8eBP0bMIzgnGJmVXGGBy9FCf4W9CfkrNOdPjb0AAcWvpC/pX+KG4mhGJ3HvfgfxFVAIJIGBkDBuCMlXPBqzG5xJwRGPeJ5ZeMdPGtEaJk"
+            fetchPriority="high"
           />
         </div>
         {/* Dark Overlay */}
