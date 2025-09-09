@@ -25,8 +25,8 @@ export const LOCATIONS = {
       sunday: 'Sunday: Closed'
     },
     coordinates: {
-      lat: 34.8642, // Approximate Blue Ridge coordinates
-      lng: -84.3244
+      lat: 34.8256, // 5772 Appalachian Hwy coordinates (near 515 Appalachian Hwy reference)
+      lng: -84.3587
     }
   },
   blairsville: {
@@ -45,8 +45,8 @@ export const LOCATIONS = {
       sunday: 'Sunday: Closed'
     },
     coordinates: {
-      lat: 34.8761, // Approximate Blairsville coordinates
-      lng: -83.9585
+      lat: 34.8782, // More accurate Blairsville area coordinates
+      lng: -83.9582
     }
   }
 } as const;

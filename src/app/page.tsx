@@ -1,14 +1,16 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import { COMPANY, LOCATIONS, CONTACT_INFO, SEO } from '@/lib/constants';
 import Container from '@/components/ui/Container';
 import Section from '@/components/ui/Section';
 import Button from '@/components/ui/Button';
 import TestimonialsSection from '@/components/sections/TestimonialsSection';
+import { generateFAQSchema } from '@/lib/faq-data';
 
 export const metadata: Metadata = {
-  title: `Hot Tubs & Spas North Georgia | ${COMPANY.name} - Blue Ridge & Blairsville`,
-  description: `${COMPANY.name} - North Georgia's premier hot tub dealership serving Blue Ridge & Blairsville for ${COMPANY.established}. Hot Spring Spas, Caldera Spas, Endless Pools, expert service & installation.`,
-  keywords: 'hot tubs North Georgia, spas Blue Ridge, hot tub dealer Blairsville, Hot Spring Spas, Caldera Spas, Endless Pools, spa service North Georgia, hot tub installation',
+  title: `Hot Tubs North Georgia | ${COMPANY.name} | Blue Ridge & Blairsville Spa Dealer`,
+  description: `${COMPANY.name} - North Georgia's #1 hot tub dealership serving Blue Ridge & Blairsville for ${COMPANY.established}. Authorized Hot Spring & Caldera dealer. Expert installation, service & maintenance. Free consultation.`,
+  keywords: 'hot tubs North Georgia, spa dealer Blue Ridge GA, hot tub store Blairsville GA, Hot Spring Spas dealer, Caldera Spas North Georgia, spa installation Blue Ridge, hot tub service Blairsville, swim spas North Georgia',
 };
 
 export default function HomePage() {
@@ -29,14 +31,15 @@ export default function HomePage() {
       <Section padding="xl" className="relative overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0">
-          <img
+          <Image
             src="https://res.cloudinary.com/southland-organics/image/upload/c_fill,w_1920,h_800,q_auto,f_auto/Georgia%20Spa%20Company/hot-tub-lifestyle/HSS-2024-Highlife-Grandee"
-            alt="Premium Hot Tub Lifestyle"
+            alt="Premium Hot Tub Lifestyle - Georgia Spa Company Blue Ridge Showroom"
             className="w-full h-full object-cover"
-            fetchPriority="high"
-            loading="eager"
-            width="1920"
-            height="800"
+            priority={true}
+            width={1920}
+            height={800}
+            sizes="100vw"
+            quality={85}
           />
         </div>
         {/* Dark Overlay */}
@@ -251,139 +254,144 @@ export default function HomePage() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
-            "@type": "LocalBusiness",
-            "name": COMPANY.name,
-            "image": "https://res.cloudinary.com/southland-organics/image/upload/Georgia%20Spa%20Company/GeorgiaSpaCompany-NewLogo_vsotmk",
-            "@id": `${SEO.siteUrl}#business`,
-            "url": SEO.siteUrl,
-            "telephone": CONTACT_INFO.general.phone,
-            "email": CONTACT_INFO.general.email,
-            "priceRange": "$$$$",
-            "description": COMPANY.description,
-            "areaServed": [
+            "@graph": [
               {
-                "@type": "State",
-                "name": "Georgia"
-              },
-              {
-                "@type": "City",
-                "name": "Blue Ridge, GA"
-              },
-              {
-                "@type": "City",
-                "name": "Blairsville, GA"
-              }
-            ],
-            "hasOfferCatalog": {
-              "@type": "OfferCatalog",
-              "name": "Hot Tubs and Spa Services",
-              "itemListElement": [
-                {
-                  "@type": "Offer",
-                  "itemOffered": {
-                    "@type": "Product",
-                    "name": "Hot Spring Spas",
-                    "category": "Hot Tubs"
-                  }
-                },
-                {
-                  "@type": "Offer",
-                  "itemOffered": {
-                    "@type": "Product", 
-                    "name": "Caldera Spas",
-                    "category": "Hot Tubs"
-                  }
-                },
-                {
-                  "@type": "Offer",
-                  "itemOffered": {
-                    "@type": "Product",
-                    "name": "Endless Pools",
-                    "category": "Swim Spas"
-                  }
-                },
-                {
-                  "@type": "Offer",
-                  "itemOffered": {
-                    "@type": "Service",
-                    "name": "Spa Installation and Maintenance",
-                    "category": "Home Services"
-                  }
-                }
-              ]
-            },
-            "location": [
-              {
-                "@type": "Place",
-                "@id": `${SEO.siteUrl}/locations/blue-ridge`,
-                "name": LOCATIONS.blueRidge.name,
-                "address": {
-                  "@type": "PostalAddress",
-                  "streetAddress": LOCATIONS.blueRidge.address.street,
-                  "addressLocality": LOCATIONS.blueRidge.address.city,
-                  "addressRegion": LOCATIONS.blueRidge.address.state,
-                  "postalCode": LOCATIONS.blueRidge.address.zip,
-                  "addressCountry": "US"
-                },
-                "geo": {
-                  "@type": "GeoCoordinates",
-                  "latitude": LOCATIONS.blueRidge.coordinates.lat,
-                  "longitude": LOCATIONS.blueRidge.coordinates.lng
-                },
-                "telephone": LOCATIONS.blueRidge.phone,
-                "openingHoursSpecification": [
+                "@type": "LocalBusiness",
+                "name": COMPANY.name,
+                "image": "https://res.cloudinary.com/southland-organics/image/upload/Georgia%20Spa%20Company/GeorgiaSpaCompany-NewLogo_vsotmk",
+                "@id": `${SEO.siteUrl}#business`,
+                "url": SEO.siteUrl,
+                "telephone": CONTACT_INFO.general.phone,
+                "email": CONTACT_INFO.general.email,
+                "priceRange": "$$$$",
+                "description": COMPANY.description,
+                "areaServed": [
                   {
-                    "@type": "OpeningHoursSpecification",
-                    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-                    "opens": "10:00",
-                    "closes": "17:00"
+                    "@type": "State",
+                    "name": "Georgia"
                   },
                   {
-                    "@type": "OpeningHoursSpecification", 
-                    "dayOfWeek": "Saturday",
-                    "opens": "10:00",
-                    "closes": "15:00"
-                  }
-                ]
-              },
-              {
-                "@type": "Place",
-                "@id": `${SEO.siteUrl}/locations/blairsville`,
-                "name": LOCATIONS.blairsville.name,
-                "address": {
-                  "@type": "PostalAddress",
-                  "streetAddress": LOCATIONS.blairsville.address.street,
-                  "addressLocality": LOCATIONS.blairsville.address.city,
-                  "addressRegion": LOCATIONS.blairsville.address.state,
-                  "postalCode": LOCATIONS.blairsville.address.zip,
-                  "addressCountry": "US"
-                },
-                "geo": {
-                  "@type": "GeoCoordinates",
-                  "latitude": LOCATIONS.blairsville.coordinates.lat,
-                  "longitude": LOCATIONS.blairsville.coordinates.lng
-                },
-                "telephone": LOCATIONS.blairsville.phone,
-                "openingHoursSpecification": [
-                  {
-                    "@type": "OpeningHoursSpecification",
-                    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-                    "opens": "10:00",
-                    "closes": "17:00"
+                    "@type": "City",
+                    "name": "Blue Ridge, GA"
                   },
                   {
-                    "@type": "OpeningHoursSpecification",
-                    "dayOfWeek": "Saturday", 
-                    "opens": "10:00",
-                    "closes": "15:00"
+                    "@type": "City",
+                    "name": "Blairsville, GA"
                   }
+                ],
+                "hasOfferCatalog": {
+                  "@type": "OfferCatalog",
+                  "name": "Hot Tubs and Spa Services",
+                  "itemListElement": [
+                    {
+                      "@type": "Offer",
+                      "itemOffered": {
+                        "@type": "Product",
+                        "name": "Hot Spring Spas",
+                        "category": "Hot Tubs"
+                      }
+                    },
+                    {
+                      "@type": "Offer",
+                      "itemOffered": {
+                        "@type": "Product", 
+                        "name": "Caldera Spas",
+                        "category": "Hot Tubs"
+                      }
+                    },
+                    {
+                      "@type": "Offer",
+                      "itemOffered": {
+                        "@type": "Product",
+                        "name": "Endless Pools",
+                        "category": "Swim Spas"
+                      }
+                    },
+                    {
+                      "@type": "Offer",
+                      "itemOffered": {
+                        "@type": "Service",
+                        "name": "Spa Installation and Maintenance",
+                        "category": "Home Services"
+                      }
+                    }
+                  ]
+                },
+                "location": [
+                  {
+                    "@type": "Place",
+                    "@id": `${SEO.siteUrl}/locations/blue-ridge`,
+                    "name": LOCATIONS.blueRidge.name,
+                    "address": {
+                      "@type": "PostalAddress",
+                      "streetAddress": LOCATIONS.blueRidge.address.street,
+                      "addressLocality": LOCATIONS.blueRidge.address.city,
+                      "addressRegion": LOCATIONS.blueRidge.address.state,
+                      "postalCode": LOCATIONS.blueRidge.address.zip,
+                      "addressCountry": "US"
+                    },
+                    "geo": {
+                      "@type": "GeoCoordinates",
+                      "latitude": LOCATIONS.blueRidge.coordinates.lat,
+                      "longitude": LOCATIONS.blueRidge.coordinates.lng
+                    },
+                    "telephone": LOCATIONS.blueRidge.phone,
+                    "openingHoursSpecification": [
+                      {
+                        "@type": "OpeningHoursSpecification",
+                        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+                        "opens": "10:00",
+                        "closes": "17:00"
+                      },
+                      {
+                        "@type": "OpeningHoursSpecification", 
+                        "dayOfWeek": "Saturday",
+                        "opens": "10:00",
+                        "closes": "15:00"
+                      }
+                    ]
+                  },
+                  {
+                    "@type": "Place",
+                    "@id": `${SEO.siteUrl}/locations/blairsville`,
+                    "name": LOCATIONS.blairsville.name,
+                    "address": {
+                      "@type": "PostalAddress",
+                      "streetAddress": LOCATIONS.blairsville.address.street,
+                      "addressLocality": LOCATIONS.blairsville.address.city,
+                      "addressRegion": LOCATIONS.blairsville.address.state,
+                      "postalCode": LOCATIONS.blairsville.address.zip,
+                      "addressCountry": "US"
+                    },
+                    "geo": {
+                      "@type": "GeoCoordinates",
+                      "latitude": LOCATIONS.blairsville.coordinates.lat,
+                      "longitude": LOCATIONS.blairsville.coordinates.lng
+                    },
+                    "telephone": LOCATIONS.blairsville.phone,
+                    "openingHoursSpecification": [
+                      {
+                        "@type": "OpeningHoursSpecification",
+                        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+                        "opens": "10:00",
+                        "closes": "17:00"
+                      },
+                      {
+                        "@type": "OpeningHoursSpecification",
+                        "dayOfWeek": "Saturday", 
+                        "opens": "10:00",
+                        "closes": "15:00"
+                      }
+                    ]
+                  }
+                ],
+                "sameAs": [
+                  "https://www.facebook.com/GeorgiaSpaCompany",
+                  "https://www.instagram.com/georgiaspacompany/",
+                  "https://x.com/GeorgiaSpaComp"
                 ]
-              }
-            ],
-            "sameAs": [
-              "https://www.facebook.com/GeorgiaSpaCompany",
-              "https://www.instagram.com/georgiaspacompany/",
-              "https://x.com/GeorgiaSpaComp"
+              },
+              generateFAQSchema()
             ]
           })
         }}

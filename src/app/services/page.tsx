@@ -4,11 +4,12 @@ import Container from '@/components/ui/Container';
 import Section from '@/components/ui/Section';
 import Card from '@/components/ui/Card';
 import Button from '@/components/ui/Button';
+import Breadcrumbs from '@/components/ui/Breadcrumbs';
 
 export const metadata: Metadata = {
-  title: `Hot Tub Services North Georgia | ${COMPANY.name} - Sales, Service & Repair`,
-  description: `Complete spa services from ${COMPANY.name} - Hot Spring & Caldera spa sales, professional installation, maintenance, repair, and water care for Blue Ridge & Blairsville.`,
-  keywords: 'hot tub service North Georgia, spa repair Blue Ridge, hot tub installation Blairsville, spa maintenance, Hot Spring service, Caldera repair, spa chemicals',
+  title: `Hot Tub Installation & Service North Georgia | ${COMPANY.name} Blue Ridge`,
+  description: `Professional hot tub services in North Georgia: installation, repair, maintenance & water care. Authorized Hot Spring & Caldera service center. Blue Ridge & Blairsville locations. Call (706) 632-1833.`,
+  keywords: 'hot tub installation North Georgia, spa repair Blue Ridge GA, hot tub service Blairsville GA, spa maintenance North Georgia, Hot Spring service center, Caldera repair Georgia, spa chemicals Blue Ridge, hot tub cover replacement',
 };
 
 export default function ServicesPage() {
@@ -27,6 +28,10 @@ export default function ServicesPage() {
         <div className="absolute inset-0 bg-black/60" />
         
         <Container className="relative z-10">
+          <Breadcrumbs 
+            items={[{ label: 'Services' }]}
+            className="text-gray-300"
+          />
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl lg:text-5xl font-bold text-white mb-6">
               Hot Tub & Spa Services North Georgia

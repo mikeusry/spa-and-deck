@@ -59,7 +59,7 @@ export default function BlueRidgePage() {
                 </div>
                 <div className="flex items-center justify-center space-x-2">
                   <ClockIcon className="w-4 h-4 text-blue-600" />
-                  <span>Mon-Fri: 9AM-6PM, Sat: 9AM-5PM</span>
+                  <span>Mon-Fri: 10AM-5PM, Sat: 10AM-3PM</span>
                 </div>
               </div>
             </div>
@@ -290,8 +290,8 @@ export default function BlueRidgePage() {
                     <div>
                       <p className="font-semibold">Hours</p>
                       <div className="text-gray-600 text-sm">
-                        <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
-                        <p>Saturday: 9:00 AM - 5:00 PM</p>
+                        <p>{location.hours.weekday}</p>
+                        <p>{location.hours.saturday}</p>
                         <p className="text-red-600">Sunday: Closed</p>
                       </div>
                     </div>

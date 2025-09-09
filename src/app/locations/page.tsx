@@ -13,8 +13,9 @@ import {
 } from '@heroicons/react/24/outline';
 
 export const metadata: Metadata = {
-  title: 'Our Locations',
-  description: `Visit ${COMPANY.name} showrooms in Blue Ridge and Blairsville, North Georgia. See our premium spa collection and meet our expert team.`,
+  title: `Hot Tub Showrooms Blue Ridge & Blairsville | ${COMPANY.name} Locations`,
+  description: `Visit ${COMPANY.name} showrooms in Blue Ridge & Blairsville, North Georgia. Working displays of Hot Spring Spas, Caldera Spas & Endless Pools. Expert consultation & installation.`,
+  keywords: 'hot tub showroom Blue Ridge GA, spa dealer Blairsville GA, Hot Spring dealer North Georgia, Caldera showroom Blue Ridge, hot tub store near me, spa consultation Blairsville',
 };
 
 export default function LocationsPage() {
@@ -263,6 +264,83 @@ export default function LocationsPage() {
           </div>
         </Container>
       </Section>
+
+      {/* Schema Markup */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify([
+            {
+              "@context": "https://schema.org",
+              "@type": "Store",
+              "name": `${COMPANY.name} - Blue Ridge Showroom`,
+              "image": "https://res.cloudinary.com/southland-organics/image/upload/Georgia%20Spa%20Company/GeorgiaSpaCompany-NewLogo_vsotmk",
+              "telephone": LOCATIONS.blueRidge.phone,
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": LOCATIONS.blueRidge.address.street,
+                "addressLocality": LOCATIONS.blueRidge.address.city,
+                "addressRegion": LOCATIONS.blueRidge.address.state,
+                "postalCode": LOCATIONS.blueRidge.address.zip,
+                "addressCountry": "US"
+              },
+              "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": LOCATIONS.blueRidge.coordinates.lat,
+                "longitude": LOCATIONS.blueRidge.coordinates.lng
+              },
+              "openingHoursSpecification": [
+                {
+                  "@type": "OpeningHoursSpecification",
+                  "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+                  "opens": "10:00",
+                  "closes": "17:00"
+                },
+                {
+                  "@type": "OpeningHoursSpecification",
+                  "dayOfWeek": "Saturday",
+                  "opens": "10:00",
+                  "closes": "15:00"
+                }
+              ]
+            },
+            {
+              "@context": "https://schema.org",
+              "@type": "Store",
+              "name": `${COMPANY.name} - Blairsville Showroom`,
+              "image": "https://res.cloudinary.com/southland-organics/image/upload/Georgia%20Spa%20Company/GeorgiaSpaCompany-NewLogo_vsotmk",
+              "telephone": LOCATIONS.blairsville.phone,
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": LOCATIONS.blairsville.address.street,
+                "addressLocality": LOCATIONS.blairsville.address.city,
+                "addressRegion": LOCATIONS.blairsville.address.state,
+                "postalCode": LOCATIONS.blairsville.address.zip,
+                "addressCountry": "US"
+              },
+              "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": LOCATIONS.blairsville.coordinates.lat,
+                "longitude": LOCATIONS.blairsville.coordinates.lng
+              },
+              "openingHoursSpecification": [
+                {
+                  "@type": "OpeningHoursSpecification",
+                  "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+                  "opens": "10:00",
+                  "closes": "17:00"
+                },
+                {
+                  "@type": "OpeningHoursSpecification",
+                  "dayOfWeek": "Saturday",
+                  "opens": "10:00",
+                  "closes": "15:00"
+                }
+              ]
+            }
+          ])
+        }}
+      />
     </>
   );
 }

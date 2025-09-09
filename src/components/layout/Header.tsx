@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { clsx } from 'clsx';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import { COMPANY, NAVIGATION } from '@/lib/constants';
@@ -36,13 +37,14 @@ export default function Header({
           {/* Logo and Company Name */}
           <Link href="/" className="flex items-center space-x-3 group">
             <div className="flex-shrink-0">
-              <img
+              <Image
                 src="https://res.cloudinary.com/southland-organics/image/upload/h_48,q_auto,f_auto/Georgia%20Spa%20Company/GeorgiaSpaCompany-NewLogo_vsotmk"
-                alt="Georgia Spa Company Logo"
+                alt="Georgia Spa Company Logo - North Georgia's Premier Hot Tub Dealer"
                 className="h-12 w-auto transition-transform duration-200 group-hover:scale-105"
-                width="48"
-                height="48"
-                loading="eager"
+                width={48}
+                height={48}
+                priority={true}
+                quality={90}
               />
             </div>
             <div className="hidden sm:block">

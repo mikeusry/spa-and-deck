@@ -276,9 +276,9 @@ export default function BlairsvillePage() {
                     <div>
                       <p className="font-semibold">Hours</p>
                       <div className="text-gray-600 text-sm">
-                        <p>Monday - Friday: 10:00 AM - 5:00 PM</p>
-                        <p>Saturday: 10:00 AM - 3:00 PM</p>
-                        <p className="text-red-600">Sunday: Closed</p>
+                        <p>{location.hours.weekday}</p>
+                        <p>{location.hours.saturday}</p>
+                        <p className="text-red-600">{location.hours.sunday}</p>
                       </div>
                     </div>
                   </div>
