@@ -1,0 +1,157 @@
+/* HubSpot Form Custom Styling */
+
+/* Form container */
+.hubspot-form .hbspt-form {
+  font-family: Inter, system-ui, sans-serif !important;
+}
+
+/* Form fields */
+.hubspot-form .hs-form-field {
+  margin-bottom: 1.5rem !important;
+}
+
+.hubspot-form .hs-form-field label {
+  color: #374151 !important;
+  font-weight: 500 !important;
+  font-size: 0.875rem !important;
+  margin-bottom: 0.5rem !important;
+  display: block !important;
+}
+
+.hubspot-form .hs-input,
+.hubspot-form .hs-form-field select,
+.hubspot-form .hs-form-field textarea {
+  width: 100% !important;
+  padding: 0.75rem !important;
+  border: 1px solid #d1d5db !important;
+  border-radius: 0.5rem !important;
+  font-size: 1rem !important;
+  line-height: 1.5 !important;
+  color: #111827 !important;
+  background-color: #ffffff !important;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out !important;
+}
+
+.hubspot-form .hs-input:focus,
+.hubspot-form .hs-form-field select:focus,
+.hubspot-form .hs-form-field textarea:focus {
+  outline: none !important;
+  border-color: #2563eb !important;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1) !important;
+}
+
+/* Submit button */
+.hubspot-form .hs-button {
+  background-color: #2563eb !important;
+  color: white !important;
+  border: none !important;
+  border-radius: 0.5rem !important;
+  padding: 0.75rem 1.5rem !important;
+  font-size: 1rem !important;
+  font-weight: 500 !important;
+  cursor: pointer !important;
+  transition: background-color 0.15s ease-in-out !important;
+  width: 100% !important;
+  margin-top: 1rem !important;
+}
+
+.hubspot-form .hs-button:hover {
+  background-color: #1d4ed8 !important;
+}
+
+.hubspot-form .hs-button:focus {
+  outline: none !important;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.3) !important;
+}
+
+/* Error messages */
+.hubspot-form .hs-error-msgs {
+  color: #dc2626 !important;
+  font-size: 0.875rem !important;
+  margin-top: 0.25rem !important;
+}
+
+.hubspot-form .hs-error-msgs li {
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Required field asterisk */
+.hubspot-form .hs-form-required {
+  color: #dc2626 !important;
+}
+
+/* Checkbox and radio styling */
+.hubspot-form .hs-form-checkbox,
+.hubspot-form .hs-form-radio {
+  margin-bottom: 1rem !important;
+}
+
+.hubspot-form .hs-form-checkbox input,
+.hubspot-form .hs-form-radio input {
+  width: auto !important;
+  margin-right: 0.5rem !important;
+}
+
+.hubspot-form .hs-form-checkbox label,
+.hubspot-form .hs-form-radio label {
+  font-weight: normal !important;
+  cursor: pointer !important;
+  display: inline !important;
+  margin-bottom: 0 !important;
+}
+
+/* Success message */
+.hubspot-form .submitted-message {
+  background-color: #f0f9ff !important;
+  border: 1px solid #38bdf8 !important;
+  border-radius: 0.5rem !important;
+  padding: 1rem !important;
+  color: #0c4a6e !important;
+  text-align: center !important;
+  margin-top: 1rem !important;
+}
+
+/* Loading state */
+.hubspot-form .hs-loading {
+  text-align: center !important;
+  padding: 2rem !important;
+  color: #6b7280 !important;
+}
+
+/* Compact form styling */
+.hubspot-form-compact .hs-form-field {
+  margin-bottom: 1rem !important;
+}
+
+.hubspot-form-compact .hs-form-field label {
+  font-size: 0.8125rem !important;
+}
+
+.hubspot-form-compact .hs-input,
+.hubspot-form-compact .hs-form-field select,
+.hubspot-form-compact .hs-form-field textarea {
+  padding: 0.5rem !important;
+  font-size: 0.875rem !important;
+}
+
+.hubspot-form-compact .hs-button {
+  padding: 0.5rem 1rem !important;
+  font-size: 0.875rem !important;
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 640px) {
+  .hubspot-form .hs-input,
+  .hubspot-form .hs-form-field select,
+  .hubspot-form .hs-form-field textarea {
+    font-size: 16px !important; /* Prevent zoom on iOS */
+  }
+  
+  .hubspot-form-compact .hs-input,
+  .hubspot-form-compact .hs-form-field select,
+  .hubspot-form-compact .hs-form-field textarea {
+    font-size: 16px !important; /* Prevent zoom on iOS */
+  }
+}
