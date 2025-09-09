@@ -53,6 +53,7 @@ export interface SectionProps extends BaseComponentProps {
   background?: 'default' | 'muted' | 'gradient' | 'primary' | 'secondary';
   padding?: 'none' | 'sm' | 'md' | 'lg' | 'xl';
   fullWidth?: boolean;
+  id?: string;
 }
 
 // Loading states
