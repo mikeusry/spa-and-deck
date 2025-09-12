@@ -20,6 +20,45 @@ export default function HomePage() {
       <Section background="primary" padding="sm">
         <Container>
           <div className="text-center">
+            <div className="flex flex-col md:flex-row items-center justify-center gap-4 mb-4">
+              {/* Spa and Deck Logo */}
+              <div className="flex flex-col items-center">
+                <img
+                  src="https://res.cloudinary.com/southland-organics/image/upload/c_fit,w_200,h_80,q_auto,f_auto/Georgia%20Spa%20Company/spadeck"
+                  alt="Spa and Deck Creations Logo"
+                  className="h-16 w-auto mb-2"
+                  width="200"
+                  height="80"
+                />
+                <span className="text-sm text-gray-700 font-medium">Spa and Deck Creations</span>
+              </div>
+              
+              {/* Arrow */}
+              <div className="flex items-center text-blue-600">
+                <div className="hidden md:block">
+                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </div>
+                <div className="md:hidden">
+                  <svg className="w-8 h-8 rotate-90" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </div>
+              </div>
+              
+              {/* Georgia Spa Company Logo */}
+              <div className="flex flex-col items-center">
+                <img
+                  src="https://res.cloudinary.com/southland-organics/image/upload/c_fit,w_200,h_80,q_auto,f_auto/Georgia%20Spa%20Company/GeorgiaSpaCompany-NewLogo_vsotmk"
+                  alt="Georgia Spa Company Logo"
+                  className="h-16 w-auto mb-2"
+                  width="200"
+                  height="80"
+                />
+                <span className="text-sm text-gray-700 font-medium">Georgia Spa Company</span>
+              </div>
+            </div>
             <p className="text-lg font-medium text-gray-900">
               📢 {COMPANY.transitionMessage}
             </p>
